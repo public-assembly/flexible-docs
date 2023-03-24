@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "flexible-documentation",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "How to get up and running with Flexible by Public Assembly",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,17 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/public-assembly/flexible-docs.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "@pblcasmbly @valcoholics1 @salieflewis",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
-  },
-  "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
-    "@napi-rs/simple-git-darwin-arm64": "^0.1.8",
-    "@public-assembly/dao-utils": "^0.0.5",
     "next": "^13.1.6",
     "nextra": "^2.2.15",
     "nextra-theme-docs": "^2.2.15",

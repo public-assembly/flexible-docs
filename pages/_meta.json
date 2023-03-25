@@ -10,11 +10,6 @@
     "title": "Documentation"
   },
 
-  "about": {
-    "title": "About",
-    "type": "page"
-  },
-
   "examples": {
     "title": "Examples",
     "type": "page"

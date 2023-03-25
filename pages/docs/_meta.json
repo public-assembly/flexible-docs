@@ -1,5 +1,6 @@
 {
   "getting_started": "Getting Started",
+  "vercel_config": "Configuration",
   "dependencies": {
     "title":"Dependencies",
     "display":"hidden"

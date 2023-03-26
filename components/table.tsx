@@ -21,7 +21,7 @@ export function OptionTable({ options }: { options: [string, any] }) {
             key={option}
             className="border-b border-gray-100 dark:border-neutral-700/50"
             >
-                <td className="whitespace-pre py-2 font-mono text-xs font-semibold leading-6  text-green-300 dark:text-green-300">
+                <td className="whitespace-pre py-2 font-mono text-xs font-semibold leading-6  text-zinc-900 dark:text-zinc-200">
                 {option} </td>
             <td className="py-2 pl-6">{description}</td>
             </tr>

@@ -32,5 +32,10 @@ const config: DocsThemeConfig = {
   sidebar: {
     defaultMenuCollapseLevel: 4,
   },
+
+  primaryHue: {
+    dark: 145,
+    light: 145
+  }
 };
 export default config;

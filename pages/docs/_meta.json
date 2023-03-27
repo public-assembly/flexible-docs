@@ -1,18 +1,10 @@
 {
   "getting_started": "Getting Started",
   "vercel_config": "Configuration",
-  "dependencies": {
-    "title":"Dependencies",
-    "display":"hidden"
-  },
-  "architecture": {
-    "title": "Architecture",
-    "display":"hidden"
-  },
+  "advanced": "Advanced",
   "theming": {
     "title": "Theming",
     "display":"hidden"
   },
-  "advanced": "Advanced",
   "changelog": "Changelog"
 }

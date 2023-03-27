@@ -23,7 +23,7 @@ export function CustomOptionTable({ options }: { options: [string, string, any, 
                             key={property}
                             className="border-b border-gray-100 dark:border-neutral-700/50"
                         >
-                            <td className="whitespace-pre py-2 font-mono text-xs font-semibold leading-6 text-violet-600 dark:text-violet-500">
+                            <td className="whitespace-pre py-2 font-mono text-xs font-semibold leading-6 text-zinc-900 dark:text-zinc-200">
                                 {property} </td>
                             <td className="whitespace-pre py-2 font-mono text-xs font-semibold leading-6 ">
                                 {type} </td>

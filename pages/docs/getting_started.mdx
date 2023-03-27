@@ -3,14 +3,13 @@ import "./styles.css"
 ---
 import { OptionTable } from "components/table";
 import { CustomOptionTable } from "components/CustomOptionsTable";
-
+import { Callout, Tab, Tabs, Steps } from "nextra-theme-docs";
 
 <Callout emoji="🚨">
  This page is a under construction. Help us expand it by contributing!
 </Callout>
 
 # Getting Started with Flexible
-import { Callout, Tab, Tabs, Steps } from "nextra-theme-docs";
 
 Here, we outline the process of forking the Flexible DAO Interfaces template and creating your own DAO site powered by an onchain theming contract.
 
@@ -21,17 +20,14 @@ Here, we outline the process of forking the Flexible DAO Interfaces template and
 
 Click on the `+` in the top-right corner of the navigation bar. This will open a dropdown menu that gives you the option to "Connect your wallet" or "Copy our template".
 
-![Dash](public/dash.png)
-
 Click on `Copy our template`. 
 
-![](public/copy.png)
+![Dash](public/copy.gif)
+
 
 ### Create Platform Index
 
 In the pop-up message you will be asked to follow the steps to create your own DAO interface. 
-
-![](public/create_index.png)
 
 The first step in this process is creating your platform index.
 
@@ -39,17 +35,19 @@ The first step in this process is creating your platform index.
 
 After signing in, click the `Create Index` button. This action prompts a transaction in your wallet, requesting you to submit the necessary gas for your platform's creation within the registry of Platform creators. This data is stored directly on the blockchain.
 
+![](public/create_index.gif)
+
 ### Save Your Index
 
-![](public/save_index.png)
-
 Upon successful completion, the process will continue and prompt you to copy the generated platform index, as shown below. You will need this index to complete the configuration process in Vercel.
+
+![](public/save_index.gif)
 
 ### Deploy
 
 Continue the final steps to this process as outlined in the [Deploy Configuration](/docs/vercel_config/) page.
 
-![](public/walkthrough.png)
+
 
 </Steps>
 
@@ -64,18 +62,16 @@ After deploying your new site, click on the `+` located in the top-right corner.
 
 After connecting your wallet, you will see a button labeled "Edit Theme."
 
-![](public/edit_theme.png)
-
 This modal enables you to update your DAO website by utilizing data from an [onchain registry](/docs/theming/onchain_theming). You can reference a theming configuration for any address or contract owned by another address.
 
-![](public/modal.png)
 
-#### Presets 
-There are 5 themes available from the registry: `Default`, `Light`, `Midori`, `Nouns`, `Obscura`, and `Slime`.
+![](public/colors.gif)
 
-#### Advanced 
 
-For more advanced customizations, you can create new themes and update the DAO site without needing any coding skills. You have the option to change colors of the text and background, modify buttons, borders, and border size, select fonts, and overall form unique branding for your DAO site. After editing the theme, you can to revert it back to default, or save changes.
+For more customizations, you can create new themes and update the DAO site without needing any coding skills. You have the option to change colors of the text and background, modify buttons, borders, and border size, select fonts, and overall form unique branding for your DAO site. After editing the theme, you can to revert it back to default, or save changes.
+
+
+![](public/fonts.gif)
 
 **Saving changes to your theme**
 

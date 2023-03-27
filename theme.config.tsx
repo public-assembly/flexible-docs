@@ -20,7 +20,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase:
     "https://github.com/public-assembly/flexible-docs/blob/main/",
   footer: {
-    text: "Built by PA",
+    text: "Built by Public Assembly",
   },
 
   useNextSeoProps() {

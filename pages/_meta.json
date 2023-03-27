@@ -8,10 +8,5 @@
   "docs": {
     "type": "page",
     "title": "Documentation"
-  },
-
-  "examples": {
-    "title": "Examples",
-    "type": "page"
   }
 }

@@ -1,7 +1,18 @@
 import React from "react";
+import Head from "next/head";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
+const Favicon: React.FC = () => {
+  const faviconPath = "/path/to/your/favicon.ico";
+  return (
+    <Head>
+      <link rel="icon" href={faviconPath} />
+    </Head>
+  );
+};
+
 const config: DocsThemeConfig = {
+  
   logo: <span>Flexible</span>,
   project: {
     link: "https://github.com/public-assembly/flexible",
@@ -20,7 +31,7 @@ const config: DocsThemeConfig = {
   docsRepositoryBase:
     "https://github.com/public-assembly/flexible-docs/blob/main/",
   footer: {
-    text: "Built by PA",
+    text: "Built by Public Assembly",
   },
 
   useNextSeoProps() {

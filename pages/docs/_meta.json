@@ -1,10 +1,5 @@
 {
   "getting_started": "Getting Started",
-  "vercel_config": "Configuration",
-  "advanced": "Advanced",
-  "theming": {
-    "title": "Theming",
-    "display":"hidden"
-  },
-  "changelog": "Changelog"
+  "deploy_walkthrough": "Deploy Walkthrough",
+  "onchain_theming": "Onchain Theming"
 }

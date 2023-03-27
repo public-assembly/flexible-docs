@@ -1,55 +1,36 @@
-import React from "react";
-import Head from "next/head";
-import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
-import { useRouter } from "next/router";
+/**
+ * @type {import('nextra-theme-docs').DocsThemeConfig}
+ */
+ import { useRouter } from 'next/router';
 
-const useHead = () => {
-  const { title } = useConfig();
-  const { route } = useRouter();
-  const socialCard =
-    route === '/' || !title
-      ? 'https://flexible.pa.com/og.jpeg'
-      : `https://flexible.pa.com/api/og?title=${title}`;
+ const github = 'https://github.com/public-assembly/flexible';
+ 
+ const TITLE_WITH_TRANSLATIONS = {
+   'en-US': 'Flexible Documentation',
+ } as const;
+ 
+ const EDIT_LINK_WITH_TRANSLATIONS = {
+   'en-US': 'Edit this page on GitHub →',
+ } as const;
+ 
+ import { DocsThemeConfig, useConfig, useTheme } from 'nextra-theme-docs';
+ 
+ const Logo = ({ height, width }: { height: number; width: number }) => {
+   const { theme } = useTheme();
+   return (
+     <div style={{ alignItems: 'center', display: 'flex', gap: '8px' }}>
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.1719C20.4949 25.1719 25.76 20.027 25.76 13.6804C25.76 7.33378 20.4949 2.18886 14 2.18886C7.50513 2.18886 2.24 7.33378 2.24 13.6804C2.24 20.027 7.50513 25.1719 14 25.1719ZM14 27.3607C21.732 27.3607 28 21.2358 28 13.6804C28 6.12491 21.732 0 14 0C6.26801 0 0 6.12491 0 13.6804C0 21.2358 6.26801 27.3607 14 27.3607ZM19.4949 9.3383H12.1542V12.6971H12.1557V9.33866H19.4964V6.77249H19.4949V9.3383ZM18.581 12.6975V15.2336H12.1542V21.3567H9.11608V21.357H12.1557V15.2339H18.5825V12.6975H18.581ZM12.2301 9.41307H19.5708V6.69808H9.04167V21.4314H12.2301V15.3083H18.657V12.6231H12.2301V9.41307Z" fill="white"/>
+        </svg>
+       <span style={{ fontWeight: 'bold', fontSize: 18 }}>Flexible Docs</span>
+     </div>
+   );
+ };
+ 
 
-  return (
-    <>
-      <meta name="msapplication-TileColor" content="#fff" />
-      <meta name="theme-color" content="#fff" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Language" content="en" />
-      <meta
-        name="description"
-        content="Create your own DAO interface - Flexible"
-      />
-      <meta
-        name="og:description"
-        content="Create your own DAO interface - Flexible"
-      />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={socialCard} />
-      <meta name="twitter:site:domain" content="flexible.pa.com" />
-      <meta name="twitter:url" content="https://flexible.pa.com" />
-      <meta
-        name="og:title"
-        content={title ? title + ' – Flexible' : 'Flexible'}
-      />
-      <meta name="og:image" content={socialCard} />
-      <meta name="apple-mobile-web-app-title" content="Flexible" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-    </>
-  );
-};
-
-const config: DocsThemeConfig = {
-  
-  logo: <span>Flexible</span>,
-  project: {
-    link: "https://github.com/public-assembly/flexible",
-  },
-  chat: {
+ const config: DocsThemeConfig = {
+   docsRepositoryBase: `${github}/blob/main`,
+   chat: {
     link: "https://forum.public---assembly.com/",
     icon: (
       <svg width="24" height="24">
@@ -60,26 +41,145 @@ const config: DocsThemeConfig = {
       </svg>
     ),
   },
-  docsRepositoryBase:
-    "https://github.com/public-assembly/flexible-docs/blob/main/",
-  footer: {
-    text: "Built by Public Assembly",
-  },
+   project: {
+     link: github,
+   },
+   darkMode: true,
+   nextThemes: {
+     defaultTheme: 'dark',
+   },
+   primaryHue: {
+     dark: 169,
+     light: 212,
+   },
+   footer: {
+     text: `Built by Public Assembly`,
+   },
+   logo() {
+     // eslint-disable-next-line react-hooks/rules-of-hooks
+     return (
+       <div className="flex items-center gap-2">
+         <Logo width={18} height={18} />
+       </div>
+     );
+   },
+   useNextSeoProps() {
+     return {
+       titleTemplate: `%s - Flexible Documentation`,
+     };
+   },
+   head() {
+     // eslint-disable-next-line react-hooks/rules-of-hooks
+     const { frontMatter } = useConfig();
+ 
+     // eslint-disable-next-line react-hooks/rules-of-hooks
+     const { theme } = useTheme();
+     const title = frontMatter?.title || 'Build with Flexible';
+     const description =
+       frontMatter?.description ||
+       'Create your own DAO interface - Flexible.';
+       const image = frontMatter?.type
+      ? `https://docs.flexible.pa.com/api/og?title=${frontMatter?.ogImageText}&category=Developing`
+      : frontMatter?.image || '/og.jpg';
+    const folder = theme === 'light' ? '/light' : '/dark';
 
-  useNextSeoProps() {
-    return {
-      titleTemplate: "%s",
-    };
-  },
-
-  sidebar: {
-    defaultMenuCollapseLevel: 4,
-  },
-
-  primaryHue: {
-    dark: 169,
-    light: 169
-  }
-};
-export default config; 
-
+    const composedTitle = `${title} – Flexible Documentation`;
+ 
+     return (
+       <>
+         <link
+           rel="apple-touch-icon"
+           sizes="180x180"
+           href={`favicon_io/apple-touch-icon.png`}
+         />
+         <link
+           rel="icon"
+           type="image/png"
+           sizes="32x32"
+           href={`favicon_io/favicon-32x32.png`}
+         />
+         <link
+           rel="icon"
+           type="image/png"
+           sizes="16x16"
+           href={`favicon_io/favicon-16x16.png`}
+         />
+         <link rel="preconnect" href="https://fonts.googleapis.com" />
+         <link
+           rel="preconnect"
+           href="https://fonts.gstatic.com"
+           crossOrigin="true"
+         />
+         <link
+           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+           rel="stylesheet"
+         />
+         <meta name="theme-color" content="#ffffff" />
+         <meta name="msapplication-TileColor" content="#00a300" />
+         <link rel="manifest" href={`${folder}/site.webmanifest`} />
+         <meta httpEquiv="Content-Language" content="en" />
+         <meta name="title" content={composedTitle} />
+         <meta name="description" content={description} />
+ 
+         <meta name="twitter:card" content="summary_large_image" />
+         <meta name="twitter:site" content="@pblcasmbly" />
+         <meta name="twitter:image" content={image} />
+ 
+         <meta property="og:description" content={description} />
+         <meta property="og:title" content={composedTitle} />
+         <meta property="og:image" content={image} />
+         <meta property="og:type" content="website" />
+         <meta
+           name="apple-mobile-web-app-title"
+           content="Flexible  Documentation"
+         />
+         <script
+           async
+           src="https://www.googletagmanager.com/gtag/js?id=G-YNF68V1ND1"
+         ></script>
+         <script>
+           {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+  
+              gtag('config', 'G-YNF68V1ND1');
+            `}
+         </script>
+       </>
+     );
+   },
+   sidebar: {
+     defaultMenuCollapseLevel: 1,
+     titleComponent: ({ title, type }) =>
+       type === 'separator' ? (
+         <div className="flex items-center gap-2">
+           <Logo height={10} width={10} />
+           {title}
+         </div>
+       ) : (
+         <>{title}</>
+       ),
+   },
+   editLink: {
+     text() {
+       // eslint-disable-next-line react-hooks/rules-of-hooks
+       const { locale } = useRouter();
+       return (
+         <>
+           {
+             EDIT_LINK_WITH_TRANSLATIONS[
+               (locale as keyof typeof EDIT_LINK_WITH_TRANSLATIONS) ?? 'en-US'
+             ]
+           }
+         </>
+       );
+     },
+   },
+   i18n: [{ locale: 'en-US', text: 'English' }],
+   gitTimestamp: ({ timestamp }) => (
+     <>Last updated on {timestamp.toLocaleDateString()}</>
+   ),
+ };
+ 
+ export default config;

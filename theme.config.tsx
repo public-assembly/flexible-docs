@@ -1,15 +1,45 @@
 import React from "react";
 import Head from "next/head";
-import { DocsThemeConfig } from "nextra-theme-docs";
+import { DocsThemeConfig, useConfig } from "nextra-theme-docs";
+import { useRouter } from "next/router";
 
-const Favicon: React.FC = () => {
+const useHead = () => {
+  const { title } = useConfig();
+  const { route } = useRouter();
+  const socialCard =
+    route === '/' || !title
+      ? 'https://flexible.pa.com/og.jpeg'
+      : `https://flexible.pa.com/api/og?title=${title}`;
+
   return (
-    <Head>
+    <>
+      <meta name="msapplication-TileColor" content="#fff" />
+      <meta name="theme-color" content="#fff" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta httpEquiv="Content-Language" content="en" />
+      <meta
+        name="description"
+        content="Create your own DAO interface - Flexible"
+      />
+      <meta
+        name="og:description"
+        content="Create your own DAO interface - Flexible"
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={socialCard} />
+      <meta name="twitter:site:domain" content="flexible.pa.com" />
+      <meta name="twitter:url" content="https://flexible.pa.com" />
+      <meta
+        name="og:title"
+        content={title ? title + ' – Flexible' : 'Flexible'}
+      />
+      <meta name="og:image" content={socialCard} />
+      <meta name="apple-mobile-web-app-title" content="Flexible" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
-    </Head>
+    </>
   );
 };
 
@@ -47,8 +77,9 @@ const config: DocsThemeConfig = {
   },
 
   primaryHue: {
-    dark: 168,
-    light: 168
+    dark: 169,
+    light: 169
   }
 };
-export default config;
+export default config; 
+

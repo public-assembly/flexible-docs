@@ -62,7 +62,7 @@ const config: DocsThemeConfig = {
   },
 
   footer: {
-    text: `Built by Public Assembly`,
+    text: "Built by Public Assembly",
   },
 
   logo() {

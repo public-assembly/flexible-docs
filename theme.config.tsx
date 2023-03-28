@@ -52,10 +52,6 @@ const config: DocsThemeConfig = {
 
   darkMode: true,
 
-  nextThemes: {
-    defaultTheme: 'dark',
-  },
-
   primaryHue: {
     dark: 169,
     light: 212,

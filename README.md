@@ -1,5 +1,5 @@
 # Contribution Guidelines
-URL: https://flexible-docs-delta.vercel.app
+URL: https://flexible-docs-peach.vercel.app/
 
 Thanks for giving a little extra love to our docs! Below are some basic guidelines to follow to get your PR merged :)
 

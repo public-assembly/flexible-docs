@@ -19,14 +19,13 @@
    const { theme } = useTheme();
    return (
      <div style={{ alignItems: 'center', display: 'flex', gap: '8px' }}>
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="white" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M14 25.1719C20.4949 25.1719 25.76 20.027 25.76 13.6804C25.76 7.33378 20.4949 2.18886 14 2.18886C7.50513 2.18886 2.24 7.33378 2.24 13.6804C2.24 20.027 7.50513 25.1719 14 25.1719ZM14 27.3607C21.732 27.3607 28 21.2358 28 13.6804C28 6.12491 21.732 0 14 0C6.26801 0 0 6.12491 0 13.6804C0 21.2358 6.26801 27.3607 14 27.3607ZM19.4949 9.3383H12.1542V12.6971H12.1557V9.33866H19.4964V6.77249H19.4949V9.3383ZM18.581 12.6975V15.2336H12.1542V21.3567H9.11608V21.357H12.1557V15.2339H18.5825V12.6975H18.581ZM12.2301 9.41307H19.5708V6.69808H9.04167V21.4314H12.2301V15.3083H18.657V12.6231H12.2301V9.41307Z" fill="white"/>
         </svg>
        <span style={{ fontWeight: 'bold', fontSize: 18 }}>Flexible Docs</span>
      </div>
    );
  };
- 
 
  const config: DocsThemeConfig = {
    docsRepositoryBase: `${github}/blob/main`,
@@ -90,19 +89,19 @@
          <link
            rel="apple-touch-icon"
            sizes="180x180"
-           href={`favicon_io/apple-touch-icon.png`}
+           href={`${folder}/apple-touch-icon.png`}
          />
          <link
            rel="icon"
            type="image/png"
            sizes="32x32"
-           href={`favicon_io/favicon-32x32.png`}
+           href={`${folder}/favicon-32x32.png`}
          />
          <link
            rel="icon"
            type="image/png"
            sizes="16x16"
-           href={`favicon_io/favicon-16x16.png`}
+           href={`${folder}/favicon-16x16.png`}
          />
          <link rel="preconnect" href="https://fonts.googleapis.com" />
          <link
@@ -130,7 +129,7 @@
          <meta property="og:type" content="website" />
          <meta
            name="apple-mobile-web-app-title"
-           content="Flexible  Documentation"
+           content="Flexible Documentation"
          />
          <script
            async

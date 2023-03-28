@@ -1,5 +1,6 @@
 import { OptionTable } from "components/table";
-import { CustomOptionTable } from "components/CustomOptionsTable";
+import { OptionTable2 } from "components/table2";
+
 import { Callout, Tab, Tabs, Steps } from "nextra-theme-docs";
 
 # Deploy Walkthrough
@@ -13,9 +14,7 @@ Ready to deploy your new DAO interface? If you've come here via the [Flexible](h
 
 ### Creating a New Project on Vercel
 
-> For this step you will need to sign a GitHub account. If you don’t have a GitHub account, follow our [Getting Started with GitHub](https://www.loom.com/share/b39dcc47d5724dbb937270191fc016a9) tutorial.
-
-Follow this [link](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpublic-assembly%2Fflexible&env=NEXT_PUBLIC_PLATFORM_INDEX,NEXT_PUBLIC_TOKEN_ADDRESS,NEXT_PUBLIC_ALCHEMY_KEY,NEXT_PUBLIC_WEB3STORAGE_TOKEN,NEXT_PUBLIC_CHAIN_ID,NEXT_PUBLIC_SITE_TITLE,NEXT_PUBLIC_SITE_DESCRIPTION,NEXT_PUBLIC_TWITTER_HANDLE,NEXT_PUBLIC_WEBSITE_URL) to create a fork of the [Flexible](https://github.com/public-assembly/flexible) template. This page is intended to exist as a reference guide as you go through the deploy process.
+> For this step you will need to sign a GitHub account. If you don’t have a GitHub account, follow our [Getting Started with GitHub](https://www.loom.com/share/b39dcc47d5724dbb937270191fc016a9) tutorial. This page is intended to exist as a reference guide as you go through the deploy process.
 
 <Steps>
 ### Create Git Repository
@@ -26,23 +25,21 @@ Create a name for your new project. Make your repository public by unchecking th
 
 Provide the required environment variables. Beside each input description is an example, but you must provide your own unique values.
 
-`NEXT_PUBLIC_PLATFORM_INDEX` Platform index created via a Flexible template, i.e. `3`
-<br></br>
-`NEXT_PUBLIC_TOKEN_ADDRESS` Ethereum address of your DAO's NFT, i.e. `0xd2e7684cf3e2511cc3b4538bb2885dc206583076`
-<br></br>
-`NEXT_PUBLIC_ALCHEMY_KEY` API key from your Alchemy dashboard. For detailed instructions on how to retrieve an Alchemy API Key, [click here](https://www.youtube.com/watch?v=tfggWxfG9o0).
-<br></br>
-`NEXT_PUBLIC_WEB3STORAGE_TOKEN` API key from your web3.storage dashboard. For detailed instructions on how to retrieve a web3.storage API Key, [click here](https://web3.storage/docs/how-tos/generate-api-token/)
-<br></br>
-`NEXT_PUBLIC_CHAIN_ID` Chain ID of the desired network for your app. Put `1` for Ethereum Mainnet and `5` for the Goerli Testnet.
-<br></br>
-`NEXT_PUBLIC_SITE_TITLE` Name of your DAO, i.e. `Public Assembly`
-<br></br>
-`NEXT_PUBLIC_SITE_DESCRIPTION` Short string of text for SEO purposes, i.e. `Create what's missing.`
-<br></br>
-`NEXT_PUBLIC_TWITTER_HANDLE` Twitter handle of your DAO, without the @ symbol. i.e. `pblcasmbly`. If you don't have one, supply an empty string, i.e. `""`
-<br></br>
-`NEXT_PUBLIC_WEBSITE_URL` Link to an alternative website for your DAO. If you don't have one, supply an empty string, i.e. `""`
+<OptionTable options={[
+  ['NEXT_PUBLIC_PLATFORM_INDEX', 'Platform index created via a Flexible template, i.e. `3`'],
+  ['NEXT_PUBLIC_TOKEN_ADDRESS', 'Ethereum address of your DAO\'s NFT, i.e. `0xd2e7684cf3e2511cc3b4538bb2885dc206583076`'],
+  ['NEXT_PUBLIC_ALCHEMY_KEY', 'API key from your Alchemy dashboard.'],
+  ['NEXT_PUBLIC_WEB3STORAGE_TOKEN','API key from your web3.storage dashboard.'],
+  ]}/>
+*[How to retrieve an Alchemy API Key](https://www.youtube.com/watch?v=tfggWxfG9o0)* 👈 | 👉 *[How to retrieve a web3.storage API Key](https://web3.storage/docs/how-tos/generate-api-token/)*
+
+<OptionTable2 options={[
+  ['NEXT_PUBLIC_CHAIN_ID','Chain ID of the desired network for your app. Put `1` for Ethereum Mainnet and `5` for the Goerli Testnet.'],
+  ['NEXT_PUBLIC_SITE_TITLE', 'Name of your DAO, i.e. `Public Assembly`'],
+  ['NEXT_PUBLIC_SITE_DESCRIPTION','Short string of text for SEO purposes, i.e. `Create what\'s missing.`'],
+  ['NEXT_PUBLIC_TWITTER_HANDLE', 'Twitter handle of your DAO, without the @ symbol. i.e. `pblcasmbly`. If you don\'t have one, supply an empty string, i.e. `""`'],
+  ['NEXT_PUBLIC_WEBSITE_URL','Link to an alternative website for your DAO. If you don\'t have one, supply an empty string, i.e. `""`']
+]}/>
 
 ### Deploy
 

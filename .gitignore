@@ -1,5 +1,7 @@
 # Ignore .next build artifacts
 .next/
 
+.next/cache/webpack
+
 # Ignore node_modules directory
 node_modules/

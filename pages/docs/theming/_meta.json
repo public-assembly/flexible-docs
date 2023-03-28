@@ -7,9 +7,5 @@
     "design_library": {
       "title": "Design Library",
       "display": "hidden"
-    },
-    "onchain_theming": {
-      "title": "Theming Registry",
-      "display": "hidden"
     }
   }

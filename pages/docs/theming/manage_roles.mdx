@@ -1,1 +1,72 @@
+import { OptionTable } from "components/table";
+import { OptionTable2 } from "components/table2";
+import { Callout, Tab, Tabs, Steps } from "nextra-theme-docs";
+
 # Managing Admin Roles 
+
+Under the hood of [Flexible](https://flexible.vercel.app), there's an [access control module](https://github.com/public-assembly/onchain/tree/master/remote-access-control) within the [Theme Registry](https://etherscan.io/address/0x9a23AE640040e4d34E9e00E500003000017144F4) contract that determines the administrative rights and access levels for each theme under a given `platformIndex`. By design, the person who creates a `platformIndex` is given admin rights to update themes automatically. Moreover, extra methods are provided for easy management of multiple administrators in a deployment.
+
+## How to Grant Admin Roles 
+
+### Quickstart
+
+![Dash](public/roles.gif) 
+<Steps>
+
+### Visit Etherscan
+
+- Go to the [Etherscan](https://etherscan.io/) website and enter this contract address into the search bar. This will take you to the contract's page, where you can view its transactions, events, and other details.
+
+```solidity copy
+0x9a23AE640040e4d34E9e00E500003000017144F4
+```
+
+### Connect Wallet
+    - To write functions to the contract, you need to connect a Web3-enabled wallet, such as MetaMask, Rainbow, or Coinbase, to Etherscan. 
+    - On the contract's page, click on the "Connect to Web3" button located on the top right corner. This will prompt you to connect your wallet. 
+    - Follow the on-screen instructions to connect your wallet.
+
+### Write Contract
+    - Once your wallet is connected, navigate to the "Write Contract" tab on the contract's Etherscan page. This tab lists all the writable functions available in the contract.
+    - Select the function you want to interact with from the list. 
+    - To access the write function for granting roles, you can [click here](https://etherscan.io/address/0x9a23ae640040e4d34e9e00e500003000017144f4#writeContract#F1)
+
+### Input parameters
+
+- You'll need to provide the required input parameters.
+
+#### Inputs for grantRoles()
+
+1. Input your platform index. If you haven't minted it yet, check out our Getting Started page.
+
+2. Provide the tuple using the following format:
+
+```solidity copy 
+[["0x0000000000000000000000000000000000000000", "1"]]
+```
+
+3. Substitute the 0x address with the desired address for assigning the role.
+
+4. Substitute the # for the role you desire to give the address 
+
+**Definitions for access roles**
+<OptionTable options={[
+    ["0", "NO ROLE"],
+    ["1", "MANAGER = Able make changes to a platform's theme"],
+    ["2", "ADMIN = Able make changes to a platforms's theme, and add and revoke admin roles"]
+    ]}/>
+
+![Dash](public/roles2.gif) 
+
+> If you experience any errors make sure your tuple is formatted correctly. 
+
+### Confirm the transaction:
+    - Once you've filled in the required input parameters and attached any necessary ETH, click the "Write" button next to the function. This will prompt a confirmation window from your Web3 wallet. 
+    - Keep in mind that you'll have to pay gas fees for the transaction, so make sure you have enough ETH in your wallet to cover these costs.
+    - Review the transaction details, and if everything looks correct, confirm the transaction.
+    - After confirming the transaction,you can view its details on Etherscan by clicking on the transaction hash.
+    
+> Remember that writing functions to a smart contract often involves modifying its state, which may have irreversible consequences. Ensure you understand the function you're interacting with and the potential implications of the transaction before you proceed. Feel free to test this on testnet first. 
+
+</Steps>
+

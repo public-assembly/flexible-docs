@@ -1,9 +1,6 @@
 {
     "customization": "Customization",
-    "manage_roles": {
-      "title": "Managing Roles",
-      "display": "hidden"
-    },
+    "manage_roles":  "Managing Roles",
     "design_library": {
       "title": "Design Library",
       "display": "hidden"

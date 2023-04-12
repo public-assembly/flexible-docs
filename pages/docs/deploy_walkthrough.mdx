@@ -24,21 +24,42 @@ Create a name for your new project. Make your repository public by unchecking th
 
 Provide the required environment variables. Beside each input description is an example, but you must provide your own unique values.
 
-<OptionTable options={[
-  ['NEXT_PUBLIC_PLATFORM_INDEX', 'Platform index created via a Flexible template, i.e. `3`'],
-  ['NEXT_PUBLIC_TOKEN_ADDRESS', 'Ethereum address of your DAO\'s NFT, i.e. `0xd2e7684cf3e2511cc3b4538bb2885dc206583076`'],
-  ['NEXT_PUBLIC_ALCHEMY_KEY', 'API key from your Alchemy dashboard.'],
-  ['NEXT_PUBLIC_WEB3STORAGE_TOKEN','API key from your web3.storage dashboard.'],
-  ]}/>
-*[How to retrieve an Alchemy API Key](https://www.youtube.com/watch?v=tfggWxfG9o0)* 👈 | 👉 *[How to retrieve a web3.storage API Key](https://web3.storage/docs/how-tos/generate-api-token/)*
+<OptionTable
+  options={[
+    [
+      "NEXT_PUBLIC_PLATFORM_INDEX",
+      "Platform index created via a Flexible template, i.e. `3`",
+    ],
+    [
+      "NEXT_PUBLIC_TOKEN_ADDRESS",
+      "Ethereum address of your DAO's NFT, i.e. `0xd2e7684cf3e2511cc3b4538bb2885dc206583076`",
+    ],
+    ["NEXT_PUBLIC_ALCHEMY_KEY", "API key from your Alchemy dashboard."],
+    [
+      "NEXT_PUBLIC_WEB3STORAGE_TOKEN",
+      "API key from your web3.storage dashboard.",
+    ],
+  ]}
+/>
+*[How to retrieve an Alchemy API Key](https://www.youtube.com/watch?v=tfggWxfG9o0)*
+👈 | 👉 *[How to retrieve a web3.storage API Key](https://web3.storage/docs/how-tos/generate-api-token/)*
 
-<OptionTable2 options={[
-  ['NEXT_PUBLIC_CHAIN_ID','Chain ID of the desired network for your app. Put `1` for Ethereum Mainnet and `5` for the Goerli Testnet.'],
-  ['NEXT_PUBLIC_SITE_TITLE', 'Name of your DAO, i.e. `Public Assembly`'],
-  ['NEXT_PUBLIC_SITE_DESCRIPTION','Short string of text for SEO purposes, i.e. `Create what\'s missing.`'],
-  ['NEXT_PUBLIC_TWITTER_HANDLE', 'Twitter handle of your DAO, without the @ symbol. i.e. `pblcasmbly`. If you don\'t have one, supply an empty string, i.e. `""`'],
-  ['NEXT_PUBLIC_WEBSITE_URL','Link to an alternative website for your DAO. If you don\'t have one, supply an empty string, i.e. `""`']
-]}/>
+<OptionTable2
+  options={[
+    [
+      "NEXT_PUBLIC_CHAIN_ID",
+      "Chain ID of the desired network for your app. Put `1` for Ethereum Mainnet and `5` for the Goerli Testnet.",
+    ],
+    [
+      "NEXT_PUBLIC_TWITTER_HANDLE",
+      'Twitter handle of your DAO, without the @ symbol. i.e. `pblcasmbly`. If you don\'t have one, supply an empty string, i.e. `""`',
+    ],
+    [
+      "NEXT_PUBLIC_WEBSITE_URL",
+      'Link to an alternative website for your DAO. If you don\'t have one, supply an empty string, i.e. `""`',
+    ],
+  ]}
+/>
 
 ### Deploy
 
@@ -49,4 +70,3 @@ When your project finishes building, you’ll be redirected to a success screen 
 That's everything! If you have any trouble with this process, please [open an issue](https://github.com/public-assembly/flexible/issues/new) on GitHub.
 
 </Steps>
-
